@@ -1,31 +1,29 @@
 <?xml version="1.0"?>
 <!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
 <package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
-	<name>iFlyChat</name>
-	<id>iflylabs:iflychat</id>
-	<type>modification</type>
-	<version>1.0.0</version>
+  <name>iFlyChat</name>
+  <id>iflylabs:iflychat</id>
+  <type>modification</type>
+  <version>1.0.0</version>
 
-	<install for="2.0-2.99.99, 2.0 RC4,2.0 RC5">
-		<code>install.php</code>
-		<database>installDatabase.php</database>
-		<require-file name="Subs-iflychat.php" destination="$sourcedir" />
-		<require-file name="helper-iflychat.php" destination="$sourcedir" />
-		<require-file name="iflychat.english.php" destination="$languagedir" />
-		<require-file name="iflychat.spanish_es-utf8.php" destination="$languagedir" />
-		<require-dir name="iflychat" destination="$themedir"/>
-	</install>
-	
-	<uninstall for="2.0-2.99.99, 2.0 RC4,2.0 RC5">
-		<remove-file name="Subs-iflychat.php" destination="$sourcedir" />
-		<remove-file name="helper-iflychat.php" destination="$sourcedir" />
-		<remove-file name="iflychat.english.php" destination="$languagedir" />
-		<remove-file name="iflychat.spanish_es.php" destination="$languagedir" />
-		<remove-dir name="$themedir/iflychat"/>
-		<code>uninstall.php</code>
-		<database>uninstallDatabase.php</code>
-	</uninstall>
-	
-	
+  <install for="2.0-2.99.99, 2.0 RC4,2.0 RC5">
+    <code>install.php</code>
+    <database>installDatabase.php</database>
+    <require-file name="Subs-iflychat.php" destination="$sourcedir" />
+    <require-file name="helper-iflychat.php" destination="$sourcedir" />
+    <require-file name="iflychat.english.php" destination="$languagedir" />
+    <require-dir name="iflychat_static" destination="$themedir"/>
+  </install>
+  
+  <uninstall for="2.0-2.99.99, 2.0 RC4,2.0 RC5">
+    <remove-file name="Subs-iflychat.php" destination="$sourcedir" />
+    <remove-file name="helper-iflychat.php" destination="$sourcedir" />
+    <remove-file name="iflychat.english.php" destination="$languagedir" />
+    <remove-dir name="$themedir/iflychat_static"/>
+    <code>uninstall.php</code>
+    <database>uninstallDatabase.php</code>
+  </uninstall>
+  
+  
 
 </package-info>
