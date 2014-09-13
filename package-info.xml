@@ -12,14 +12,14 @@
     <require-file name="Subs-iflychat.php" destination="$sourcedir" />
     <require-file name="helper-iflychat.php" destination="$sourcedir" />
     <require-file name="iflychat.english.php" destination="$languagedir" />
-    <require-dir name="iflychat_static" destination="$themedir"/>
+    <require-dir name="iflychat-static" destination="$themedir"/>
   </install>
   
   <uninstall for="2.0-2.99.99, 2.0 RC4,2.0 RC5">
     <remove-file name="Subs-iflychat.php" destination="$sourcedir" />
     <remove-file name="helper-iflychat.php" destination="$sourcedir" />
     <remove-file name="iflychat.english.php" destination="$languagedir" />
-    <remove-dir name="$themedir/iflychat_static"/>
+    <remove-dir name="$themedir/iflychat-static"/>
     <code>uninstall.php</code>
     <database>uninstallDatabase.php</code>
   </uninstall>
