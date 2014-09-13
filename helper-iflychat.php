@@ -90,7 +90,7 @@ function iflychat_get_user_pic_url()
   $pUrl = $modSettings['avatar_url']. '/' .$user_info['avatar']['url'];
   if(empty($user_info['avatar']['url']))
   {
-    $url = "{$settings['default_theme_url']}/iflychat/themes/{$iflychat_theme}/images/default_avatar.png";
+    $url = "{$settings['default_theme_url']}/iflychat-static/themes/{$iflychat_theme}/images/default_avatar.png";
   }
   else
   {
@@ -134,7 +134,7 @@ function check_plain($text)
 function iflychat_get_random_name()
 {
   global $settings;
-  $path = "{$settings['default_theme_url']}/iflychat/guest_names/iflychat_guest_random_names.txt";
+  $path = "{$settings['default_theme_url']}/iflychat-static/guest_names/iflychat_guest_random_names.txt";
   $f_contents = file($path);
   $line = trim($f_contents[rand(0, count($f_contents) - 1)]);
   return $line;

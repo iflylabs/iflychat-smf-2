@@ -79,9 +79,9 @@ function iflychat_template_init($buffer)
   {
     $search_footer = "</body>";
   
-    $replace_footer = '<script type="text/javascript" src="'.$settings['default_theme_url'].'/iflychat/js/jquery.min.js"></script>
+    $replace_footer = '<script type="text/javascript" src="'.$settings['default_theme_url'].'/iflychat-static/js/jquery.min.js"></script>
           <script type="text/javascript" src="'.$scripturl.'?action=iflychat-init"></script>
-          <script type="text/javascript" src="'.$settings['default_theme_url'].'/iflychat_static/js/iflychat.js"></script>
+          <script type="text/javascript" src="'.$settings['default_theme_url'].'/iflychat-static/js/iflychat.js"></script>
           </body>';
           
     $buffer = str_replace($search_footer, $replace_footer, $buffer);
@@ -91,7 +91,7 @@ function iflychat_template_init($buffer)
 }
 
 /*iFlyChat authentication
- *Params: void
+ *Params: null
  *Returns: JSON data with key, css, _i, name, uid, userpic, userprofile
  */
 function iflychat_auth()
@@ -139,7 +139,7 @@ function iflychat_auth()
     'uname' => !($user_info['is_guest']) ? $user_info['username'] : iflychat_get_current_guest_name(),
     'uid' => !($user_info['is_guest']) ? $user_info['id'] : iflychat_get_current_guest_id(),
     'api_key' => $api_key,
-    'image_path' => $settings['default_theme_url'].'/iflychat_static/themes/' . $iflychat_theme . '/images/',
+    'image_path' => $settings['default_theme_url'].'/iflychat-static/themes/' . $iflychat_theme . '/images/',
     'isLog' => TRUE,
     'role' => $role,
     'whichTheme' => 'blue',
@@ -219,7 +219,7 @@ function iflychat_auth()
   exit(json_encode($jsonDataAssoc));
 }
 /*iFlyChat Mobile authentication
- *Params: void
+ *Params: null
  *Returns: Chat HTML page
  */
 function iflychat_mob_auth()
@@ -277,11 +277,11 @@ function iflychat_init()
     'goOnline' => $txt['MOD_GO_ONLINE'],
     'goIdle' => $txt['MOD_GO_IDLE'],
     'newMessage' => $txt['MOD_NEW_CHAT_MESSAGE'],
-    'images' => $settings['default_theme_url'].'/iflychat_static/themes/' . $iflychat_theme . '/images/',
-    'sound' => $settings['default_theme_url'].'/iflychat_static/swf/sound.swf',
-    'soundFile' => $settings['default_theme_url'].'/iflychat_static/wav/notification.mp3',
+    'images' => $settings['default_theme_url'].'/iflychat-static/themes/' . $iflychat_theme . '/images/',
+    'sound' => $settings['default_theme_url'].'/iflychat-static/swf/sound.swf',
+    'soundFile' => $settings['default_theme_url'].'/iflychat-static/wav/notification.mp3',
     'noUsers' => '<div class="item-list"><ul><li class="drupalchatnousers even first last">No users online</li></ul></div>',
-    'smileyURL' => $settings['default_theme_url'].'/iflychat_static/smileys/very_emotional_emoticons-png/png-32x32/',
+    'smileyURL' => $settings['default_theme_url'].'/iflychat-static/smileys/very_emotional_emoticons-png/png-32x32/',
     'addUrl' => ' ',
     'notificationSound' => $modSettings['iflychat_notification_sound'],
     'exurl' => $scripturl.'?action=iflychat-get',
@@ -306,9 +306,9 @@ function iflychat_init()
   
   if($modSettings['iflychat_user_picture'] == '1')
   {
-    $iflychat_settings['default_up'] = $settings['default_theme_url'].'/iflychat_static/themes/' . $iflychat_theme . '/images/default_avatar.png';
-    $iflychat_settings['default_cr'] = $settings['default_theme_url'].'/iflychat_static/themes/' . $iflychat_theme . '/images/default_room.png';
-    $iflychat_settings['default_team'] = $settings['default_theme_url'].'/iflychat_static/themes/' . $iflychat_theme . '/images/default_team.png';
+    $iflychat_settings['default_up'] = $settings['default_theme_url'].'/iflychat-static/themes/' . $iflychat_theme . '/images/default_avatar.png';
+    $iflychat_settings['default_cr'] = $settings['default_theme_url'].'/iflychat-static/themes/' . $iflychat_theme . '/images/default_room.png';
+    $iflychat_settings['default_team'] = $settings['default_theme_url'].'/iflychat-static/themes/' . $iflychat_theme . '/images/default_team.png';
   }
 
   //if SSL enabled use https else http
