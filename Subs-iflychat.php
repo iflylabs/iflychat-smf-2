@@ -180,7 +180,7 @@ function iflychat_get_user_auth()
 
     $user_data['user_groups'] = $user_info['groups'];
 
-    if ((iflychat_get_option('iflychat_enable_friends') == '2')) { // filtering based on buddypress friends
+    if ((iflychat_get_option('iflychat_enable_friends') == '1')) { // filtering based on buddypress friends
 
         $user_data['user_list_filter'] = 'friend';
         //loadMemberData($user_info['buddies']);
@@ -289,7 +289,7 @@ function iflychat_settings()
 
         array('text', 'iflychat_external_app_id'),
 
-        array('select', 'iflychat_enable_friends', array( '2' => $txt['iflychat_option_buddyPress'],'1' => $txt['iflychat_option_no'])),
+        array('select', 'iflychat_enable_friends', array('1' => $txt['iflychat_option_buddyPress'],'2' => $txt['iflychat_option_no'])),
 
         array('select', 'iflychat_popup_chat', array('1' => $txt['iflychat_popup_chat_everywhere'],
             '2' => $txt['iflychat_popup_chat_frontend_only'],
