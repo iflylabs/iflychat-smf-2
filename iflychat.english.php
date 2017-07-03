@@ -19,7 +19,7 @@
 
 	$txt['iflychat_enable_friends'] = 'Show only friends in online user list';
 	$txt['iflychat_option_no'] = 'No';
-	$txt['iflychat_option_buddyPress'] = 'BuddyPress Friends';
+	$txt['iflychat_option_buddyPress'] = 'Friends';
 	
 
 	$txt['iflychat_popup_chat'] = 'Show Popup Chat';
