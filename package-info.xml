@@ -23,7 +23,7 @@
 		<remove-file name="iflychat.spanish_es.php" destination="$languagedir" />
 		<remove-dir name="$themedir/iflychat"/>
 		<code>uninstall.php</code>
-		<database>uninstallDatabase.php</code>
+		<code>uninstallDatabase.php</code>
 	</uninstall>
 	
 	
