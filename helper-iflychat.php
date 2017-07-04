@@ -1,7 +1,7 @@
 <?php
 
 require_once('LogInOut.php');
-
+include_once "../SSI.php";
 function iflychat_get_option($optionName)
 {
     global $modSettings;
@@ -23,43 +23,22 @@ function iflychat_get_user_pic_url()
     } else {
         $iflychat_theme = 'dark';
     }
-//  $id = $user_info['id'];
     $pUrl = $modSettings['avatar_url'] . '/' . $user_info['avatar']['url'];
+
 
     if (empty($user_info['avatar']['url']) && empty($user_info['avatar']['filename'])) {
         $url = "{$settings['default_theme_url']}/iflychat/themes/{$iflychat_theme}/images/default_avatar.png";
-    } else if (!empty($user_info['avatar']['filename']))
-        return ($modSettings['avatar_url'] . '/' . $user_info['avatar']['filename']);
-    else if (substr($user_info['avatar']['url'], 0, 4) === "http") {
+    } else if (!empty($user_info['avatar']['filename'])){
+//        return ($modSettings['avatar_url'] . '/' . $user_info['avatar']['filename']);
+        $idMember = $user_info['id'];
+        $res = ssi_fetchMember([$idMember], null);
+        return $res[$idMember]['avatar']['href'];
+    } else if (substr($user_info['avatar']['url'], 0, 4) === "http") {
         return ($user_info['avatar']['url']);
     } else {
         return $pUrl;
     }
-    /*
-      $pos = strpos($url, ':');
-      if($pos !== false)
-        {
-            $url = substr($url, $pos+1);
-      }
-      return $url;*/
 }
-
-/*if(empty($user_info['avatar']['url']))
-	{
-		echo('in if1');exit();
-		$url = "{$settings['default_theme_url']}/iflychat/themes/{$iflychat_theme}/images/default_avatar.png";
-  }
-
-  else if(substr($user_info['avatar']['url'], 0, 4 ) === "http")
-  {
-  	echo('in if2');exit();
-  	return $user_info['avatar']['url'];
-  }
-  else if(!empty($user_info['avatar']['url']) && substr($user_info['avatar']['url'], 0, 4 ) !== "http")
-  {
-  	echo('in if3');exit();
-  	return $pUrl;
-  }*/
 
 function iflychat_get_user_profile_url()
 {
