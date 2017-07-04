@@ -30,7 +30,7 @@ if(!defined('SMFCHAT_EXTERNAL_CDN_HOST')){
 
 loadLanguage('iflychat');
 
-define('IFLYCHAT_PLUGIN_VERSION', 'SMF-1.0.0');
+define('IFLYCHAT_PLUGIN_VERSION', 'SMF-2.0.0');
 
 //adding action for iflychat auth and initiation
 function iflychat_add_hook(&$actionArray)
